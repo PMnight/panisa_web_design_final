@@ -1,0 +1,223 @@
+:root {
+    --portfolioindigo: #9578ff;
+    --portfoliodark_indigo: #7b4ee2;
+    --portfoliolight_pink: #f8d7d7;
+    --portfoliopink: #f3a7b4;
+    --portfoliodark_pink: #f06e85;
+    --portfoliowhite: #ffffff;
+    --portfoliofont: 'Lato', sans-serif;
+    --specialfont: 'Playfair+Display', serif;
+    --portfoliofontsize: 20px;
+}
+
+/* Page Structure */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--portfoliofont);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}
+
+header {
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    height: 145px;
+    width: 100%;
+    z-index: 100;
+    align-items: flex-end;
+    background-color: var(--portfolioindigo);
+}
+
+main {
+    display: flex;
+    flex:1;
+    width: 100%;
+    background-color: var(--portfoliodark_indigo);
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    bottom: 0;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    background-color: var(--portfoliowhite);
+    color: var(--portfolioindigo);
+    font-size: calc(var(--portfoliofontsize) * 0.7);
+    font-weight: 500;
+}
+
+/* Header */
+
+header h1 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    font-size: calc(var(--portfoliofontsize) * 2);
+    color: var(--portfoliowhite);
+    font-weight: 600;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 27px;
+}
+
+nav a{
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-self: flex-end;
+    font-size: calc(var(--portfoliofontsize) * 1.1);
+    font-weight: 600;
+    color: var(--portfoliolight_pink);
+}
+
+nav a:hover {
+    color: var(--portfoliowhite);
+    transition: 0.6s;
+    text-decoration: underline;
+  }
+
+/* Main */
+
+section::before {
+    content: "";
+    background: var(--portfoliodark_pink);
+    display: inline-block;
+    position: relative;
+    top: -50px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+section::after {
+    content: "";
+    background: var(--portfoliodark_pink);
+    display: inline-block;
+    position: relative;
+    top: -310px;
+    right: -940px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+section {
+    border: 5px solid var(--portfoliopink);
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 25px;
+}
+
+section p {
+    font-family: var(--specialfont);
+    color: var(--portfoliowhite);
+}
+
+.first_line {
+    font-size: calc(var(--portfoliofontsize) * 4.5);
+    font-weight: 800;
+}
+
+.second_line {
+    font-size: calc(var(--portfoliofontsize) * 3.0);
+    line-height: 2.0;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* @Media Rules */
+
+@media (max-width: 768px){
+    :root {
+        --portfoliofontsize: 18px;
+    }
+    
+    header {
+        height: 160px;
+    }
+
+    header h1 {
+        position: absolute;
+        top: 45px;
+        left: 55px;
+    }
+    
+    nav {
+        margin-left: 300px;
+        margin-bottom: 44px;
+    }
+
+    nav a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    section {
+        border: 5px solid var(--portfoliopink);
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 30px;
+        padding-bottom: 5px;
+        margin: 50px;
+    }
+    
+    .first_line {
+        font-size: calc(var(--portfoliofontsize) * 4.5);
+    }
+    
+    .second_line {
+        font-size: calc(var(--portfoliofontsize) * 2.5);
+        line-height: 2.0;
+    }
+} 
+
+@media (max-width: 425px){
+    :root {
+        --portfoliofontsize: 16px;
+    }
+    
+    header {
+        height: 170px;
+    }
+
+    header h1 {
+        position: absolute;
+        top: 45px;
+        left: 55px;
+    }
+
+    nav {
+        margin-left: 0px;
+        margin-bottom: 27px;
+    }
+
+    nav a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .first_line {
+        font-size: calc(var(--portfoliofontsize) * 3.0);
+    }
+    
+    .second_line {
+        font-size: calc(var(--portfoliofontsize) * 1.5);
+        text-align: left;
+        line-height: 3.0;
+    }
+} 

@@ -1,0 +1,372 @@
+:root {
+    --portfolioindigo: #9578ff;
+    --portfoliodark_indigo: #7b4ee2;
+    --portfoliolight_pink: #ffeae7;
+    --portfoliopink: #f8b5c0;
+    --portfoliodark_pink: #f06e85;
+    --portfoliowhite: #ffffff;
+    --portfoliofont: 'Lato', sans-serif;
+    --specialfont: 'Playfair+Display', serif;
+    --portfoliofontsize: 20px;
+}
+
+/* Page Structure */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--portfoliofont);
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}
+
+header {
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    height: 145px;
+    width: 100%;
+    z-index: 100;
+    align-items: flex-end;
+    background-color: var(--portfolioindigo);
+}
+
+main {
+    display: flex;
+    flex:1;
+    width: 100%;
+    background-color: var(--portfoliolight_pink);
+    /* -------------------- */
+    position:relative;
+    /* -------------------- */
+}
+
+footer {
+    bottom: 0;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    background-color: var(--portfoliowhite);
+    color: var(--portfolioindigo);
+    font-size: calc(var(--portfoliofontsize) * 0.7);
+    font-weight: 500;
+}
+
+/* Header */
+
+header h1 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    font-size: calc(var(--portfoliofontsize) * 2);
+    color: var(--portfoliowhite);
+    font-weight: 600;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 27px;
+}
+
+nav a{
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-self: flex-end;
+    font-size: calc(var(--portfoliofontsize) * 1.1);
+    font-weight: 600;
+    color: var(--portfoliolight_pink);
+}
+
+nav a:hover {
+    color: var(--portfoliowhite);
+    transition: 0.6s;
+    text-decoration: underline;
+}
+
+/* Main */
+
+section h1 {
+    font-size: calc(var(--portfoliofontsize) * 2.5);
+    font-weight: 800;
+    padding-left: 50px;
+    line-height: 2;
+    color: var(--portfoliowhite);
+    background-color: var(--portfoliodark_indigo);
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.right > div {
+    max-width: 50%;
+    box-sizing: border-box;
+    border: 10px solid var(--portfoliopink);
+}
+
+.right > figcaption {
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.left {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.left > div {
+    max-width: 50%;
+    box-sizing: border-box;
+    border: 10px solid var(--portfoliopink);
+}
+
+.left > figcaption {
+    padding-top: 20px;
+    padding-right: 50px;
+    text-align: right;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    transition: all 1s;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left:0;
+    width: 70%;
+    height: 70%;
+    transform: translateX(22.5%);
+    z-index: 20;
+    display: none;
+    transition: all 1s;
+}
+
+.container1::after {
+    background-image: url('../Images/Panisa_Mitsumpune_Assignment05-01.png');
+    top:-300px;
+}
+
+.container2::after {
+    background-image: url('../Images/Panisa_Mitsumpune_Assignment03-01.png');
+    top:350px;
+}
+
+.container3::after {
+    background-image: url('../Images/Travel Ad Print Horizontal-01-01.png');
+    top:750px;
+}
+
+.container:active::before, .container:active::after {
+    display: block;
+}
+
+.container {
+    background-color: var(--portfoliopink);
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.container:hover {
+    border: 10px solid var(--portfoliodark_pink);
+}
+
+.container img {
+    display: block;
+    transition: all 1s ease-in-out;
+}
+
+.container:hover img {
+    opacity: 60%;
+    transform: translate(0px,-10px) scale(1.2);
+}
+
+figcaption {
+    width: 50%;
+}
+
+figcaption> h2 > mark {
+    font-size: calc(var(--portfoliofontsize) * 2.0);
+    font-weight: 700;
+    line-height: 3;
+    color: var(--portfoliolight_pink);
+    background-color: var(--portfoliodark_pink);
+}
+
+figcaption > ul {
+    font-size: calc(var(--portfoliofontsize) * 1.0);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--portfoliodark_pink);
+}
+
+/* @Media Rules */
+
+@media (max-width: 768px){
+    :root {
+        --portfoliofontsize: 18px;
+    }
+    
+    header {
+        height: 160px;
+    }
+
+    header h1 {
+        position: absolute;
+        top: 45px;
+        left: 55px;
+    }
+    
+    nav {
+        margin-left: 300px;
+        margin-bottom: 44px;
+    }
+
+    nav a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    section h1 {
+        font-size: calc(var(--portfoliofontsize) * 2.0);
+        padding-left: 57px;
+    }
+
+    .right > div {
+        max-width: 60%;
+        border: 8px solid var(--portfoliopink);
+    }
+
+    .right > figcaption {
+        padding-top: 0px;
+        padding-left: 20px;
+    }
+
+    .left > div {
+        max-width: 60%;
+        border: 8px solid var(--portfoliopink);
+    }
+    
+    .left > figcaption {
+        padding-top: 0px;
+        padding-right: 20px;
+    }
+
+    figcaption {
+        width: 40%;
+    }
+    
+    figcaption> h2 > mark {
+        font-size: calc(var(--portfoliofontsize) * 1.2);
+    }
+    
+    figcaption > ul {
+        font-size: calc(var(--portfoliofontsize) * 0.85);
+    }
+} 
+
+@media (max-width: 425px){
+    :root {
+        --portfoliofontsize: 16px;
+    }
+    
+    header {
+        height: 170px;
+    }
+
+    header h1 {
+        position: absolute;
+        top: 45px;
+        left: 55px;
+    }
+
+    nav {
+        margin-left: 0px;
+        margin-bottom: 27px;
+    }
+
+    nav a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    section h1 {
+        font-size: calc(var(--portfoliofontsize) * 1.8);
+        height: 85px;
+        padding-top: 10px;
+        line-height: 1.3;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right > div {
+        max-width: 100%;
+        border: 8px solid var(--portfoliopink);
+    }
+
+    .right > figcaption {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left > div {
+        max-width: 100%;
+        border: 8px solid var(--portfoliopink);
+    }
+
+    .left > figcaption {
+        padding-right: 0px;
+    }
+
+    figcaption {
+        width: 100%;
+        height: 200px;
+        margin-top: 15px;
+    }
+    
+    figcaption> h2 > mark {
+        font-size: calc(var(--portfoliofontsize) * 1.5);
+        margin-right: 57px;
+        margin-left: 57px;
+    }
+    
+    figcaption > ul {
+        font-size: calc(var(--portfoliofontsize) * 1.0);
+        margin-right: 57px;
+        margin-left: 57px;
+    }
+} 
+
+
+
